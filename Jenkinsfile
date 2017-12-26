@@ -1,7 +1,9 @@
 
 properties([
    parameters([
-      string(name: 'ENV_DB', defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?')
+      string(defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?', name: 'ENV_DB'),
+	  string(defaultValue: '', description: 'Votre identifiant ?', name: 'LOGIN'),
+	  password(defaultValue: '', description: 'Votre mot de passe ?', name: 'PWD')
    ])
 ])
 
