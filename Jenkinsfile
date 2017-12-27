@@ -2,11 +2,13 @@
 properties([
    parameters([
       string(defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?', name: 'ENV_DB'),
-	  booleanParam(defaultValue: false, description: 'Déploiement auto', name: 'AUTO'),
+	  booleanParam(defaultValue: false, description: 'Déploiement auto', name: 'AUTO_PARAM'),
 	  string(defaultValue: '', description: 'Identifiant compte AD', name: 'LOGIN'),
 	  password(defaultValue: '', description: 'Password compte AD', name: 'PWD')
    ])
 ])
+
+def Boolean auto = AUTO_PARAM
 
 node {
 	sh "echo le login est :${LOGIN} et le mot de passe est ${PWD}. "
@@ -25,7 +27,7 @@ node {
 		}
 	}
 	
-	if (AUTO == true) {
+	if (auto) {
 		echo 'Déploiement automatique'
 	}
 	
