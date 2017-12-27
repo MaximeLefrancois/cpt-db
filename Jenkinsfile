@@ -1,3 +1,6 @@
+String LOGIN 
+
+
 
 properties([
    parameters([
@@ -15,8 +18,13 @@ def Boolean auto = AUTO_PARAM
 echo "La valeur de auto est de :${auto}."
 
 node {
-	sh "echo le login est :${LOGIN} et le mot de passe est ${PWD}. "
 
+	if (LOGIN != '' && PWD != '') {
+		sh "echo le login est :${LOGIN} et le mot de passe est ${PWD}. "
+	} else {
+		sh "echo Pas de login ni de password"
+	}
+		
 	stage("Récupération des sources") {
 		checkout scm
 	}
