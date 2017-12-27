@@ -31,7 +31,7 @@ node {
 		}
 	}
 	
-	if (auto) {
+	if (AUTO_PARAM == 'true') {
 		echo 'Déploiement automatique'
 	}
 	
