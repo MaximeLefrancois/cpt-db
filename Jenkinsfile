@@ -1,6 +1,3 @@
-String LOGIN 
-
-
 
 properties([
    parameters([
