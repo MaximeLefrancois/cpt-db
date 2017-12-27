@@ -25,7 +25,7 @@ node {
 		}
 	}
 	
-	if (AUTO) {
+	if (AUTO == true) {
 		echo 'Déploiement automatique'
 	}
 	
