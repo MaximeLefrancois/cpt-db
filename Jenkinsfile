@@ -8,11 +8,11 @@ properties([
    ])
 ])
 
-sh "La valeur de AUTO_PARAM est de :${AUTO_PARAM}.
+echo "La valeur de AUTO_PARAM est de :${AUTO_PARAM}."
 
 def Boolean auto = AUTO_PARAM
 
-sh "La valeur de auto est de :${auto}.
+echo "La valeur de auto est de :${auto}."
 
 node {
 	sh "echo le login est :${LOGIN} et le mot de passe est ${PWD}. "
